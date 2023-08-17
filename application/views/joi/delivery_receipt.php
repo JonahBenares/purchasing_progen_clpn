@@ -192,7 +192,7 @@
 			    		<tr>
 			    			<td colspan="3" class="all-border"><b class="nomarg">OR/SI: </b></td>
 			    			<td colspan="17" class="all-border">
-			    				<b class="nomarg">Sample</b> 
+			    				<b class="nomarg"><?php echo $si_no; ?></b> 
 			    				<a class='btn btn-primary btn-xs prnt' id = "updateTerm" data-toggle='modal' data-target='#UpdateTerms' data-id = '' data-name = ''>
 			    					<span class = 'fa fa-edit'></span>
 			    				</a>
@@ -317,14 +317,16 @@
 					</h5>
 					
 				</div>
-				<form method="POST" action="<?php echo base_url(); ?>">
+				<form method="POST" action="<?php echo base_url(); ?>joi/add_si">
 					<div class="modal-body">
 						<div class="form-group">
 							OR/SI
-							<input type="text" class="form-control" name="condition" autocomplete="off" id = "terms">
+							<input type="text" class="form-control" name="si_no" autocomplete="off" id = "si_no" value="<?php echo (empty($si_no) ? '' : $si_no); ?>">
 						</div>
 					</div>
 					<div class="modal-footer">
+					    <input type="hidden" name="joi_id" autocomplete="off" id = "joi_id" value="<?php echo $joi_id; ?>">
+						<input type="hidden" name="joi_dr_id" autocomplete="off" id = "joi_dr_id" value="<?php echo $joi_dr_id; ?>">
 						<input type="submit" class="btn btn-primary btn-block" value="Save changes">
 					</div>
 

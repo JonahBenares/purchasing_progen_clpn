@@ -1318,6 +1318,8 @@ class Po extends CI_Controller {
     public function delivery_receipt(){
         $po_id = $this->uri->segment(3); 
         $dr_id = $this->uri->segment(4); 
+        $data['po_id']=$po_id;
+        $data['dr_id']=$dr_id;
         $data['head']= $this->super_model->select_row_where('po_head', 'po_id', $po_id);
         $data['revision_no']= $this->super_model->select_column_where("po_dr", "revision_no", "po_id", $po_id);
         
@@ -1343,6 +1345,7 @@ class Po extends CI_Controller {
         $data['dr_year']= $this->super_model->select_column_where("po_dr", "dr_year", "po_id", $po_id);
         if(empty($dr_id)){
             $data['dr_no']= $this->super_model->select_column_where("po_dr", "dr_no", "po_id", $po_id);
+            $data['si_no']= $this->super_model->select_column_where("po_dr", "si_no", "po_id", $po_id);
             $data['dr_date']= $this->super_model->select_column_where("po_dr", "dr_date", "po_id", $po_id);
             foreach($this->super_model->select_custom_where("po_dr_items", "po_id='$po_id' AND dr_id = '$dr_id'") AS $items){
                $vendor_id= $this->super_model->select_column_where("po_head", "vendor_id", "po_id", $po_id);
@@ -1358,6 +1361,7 @@ class Po extends CI_Controller {
             }
         } else {
             $data['dr_no']= $this->super_model->select_column_custom_where("po_dr", "dr_no", "po_id='$po_id' AND dr_id = '$dr_id'");
+            $data['si_no']= $this->super_model->select_column_custom_where("po_dr", "si_no", "po_id='$po_id' AND dr_id = '$dr_id'");
             foreach($this->super_model->select_custom_where('po_dr_items', "po_id= '$po_id' AND dr_id = '$dr_id'") AS $items){
                $vendor_id= $this->super_model->select_column_where("po_head", "vendor_id", "po_id", $po_id);
                 $data['items'][]= array(
@@ -1840,6 +1844,19 @@ class Po extends CI_Controller {
         //if($this->super_model->insert_into("po_pr", $data)){
         if($this->super_model->update_where("po_pr", $data, "po_pr_id", $po_pr_id)){
             redirect(base_url().'po/reporder_prnt/'.$po_id, 'refresh');
+        }
+
+    }
+
+    public function add_si(){
+        $po_id = $this->input->post('po_id');
+        $dr_id = $this->input->post('dr_id');
+        $si_no = $this->input->post('si_no');
+        $data= array(
+            'si_no'=>$si_no
+        );
+        if($this->super_model->update_custom_where("po_dr", $data, "po_id='$po_id' AND dr_id='$dr_id'")){
+            redirect(base_url().'po/delivery_receipt/'.$po_id.'/'.$dr_id, 'refresh');
         }
 
     }

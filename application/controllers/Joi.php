@@ -304,6 +304,7 @@ class Joi extends CI_Controller {
 
         if(empty($joi_dr_id)){
             $data['dr_no']= $this->super_model->select_column_where("joi_dr", "joi_dr_no", "joi_id", $joi_id);
+            $data['si_no']= $this->super_model->select_column_where("joi_dr", "si_no", "joi_id", $joi_id);
             $materials_offer='';
             $materials_qty='';
             foreach($this->super_model->select_custom_where("joi_dr_items", "joi_id='$joi_id' AND joi_dr_id = '$joi_dr_id'") AS $items){
@@ -328,6 +329,7 @@ class Joi extends CI_Controller {
             $data['materials_qty']=$materials_qty;
         } else {
             $data['dr_no']= $this->super_model->select_column_custom_where("joi_dr", "joi_dr_no", "joi_id='$joi_id' AND joi_dr_id = '$joi_dr_id'");
+            $data['si_no']= $this->super_model->select_column_custom_where("joi_dr", "si_no", "joi_id='$joi_id' AND joi_dr_id = '$joi_dr_id'");
             $materials_offer='';
             $materials_qty='';
             foreach($this->super_model->select_custom_where('joi_dr_items', "joi_id= '$joi_id' AND joi_dr_id = '$joi_dr_id'") AS $items){
@@ -355,6 +357,20 @@ class Joi extends CI_Controller {
         $this->load->view('joi/delivery_receipt',$data);
         $this->load->view('template/footer');
     }
+
+    public function add_si(){
+        $joi_id = $this->input->post('joi_id');
+        $joi_dr_id = $this->input->post('joi_dr_id');
+        $si_no = $this->input->post('si_no');
+        $data= array(
+            'si_no'=>$si_no
+        );
+        if($this->super_model->update_custom_where("joi_dr", $data, "joi_id='$joi_id' AND joi_dr_id='$joi_dr_id'")){
+            redirect(base_url().'joi/delivery_receipt/'.$joi_id.'/'.$joi_dr_id, 'refresh');
+        }
+
+    }
+
 
     public function save_dr(){
         $joi_id = $this->input->post('joi_id');

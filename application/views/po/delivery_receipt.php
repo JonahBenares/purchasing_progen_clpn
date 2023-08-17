@@ -184,7 +184,7 @@
 		    		</tr>
 		    		<tr>
 		    			<td colspan="20" class="all-border">
-		    				<b class="nomarg">OR/SI: Sample</b>
+		    				<b class="nomarg">OR/SI: <?php echo $si_no; ?></b>
 		    				<a class='btn btn-primary btn-xs prnt' id = "updateTerm" data-toggle='modal' data-target='#UpdateTerms' data-id = '' data-name = ''>
 		    					<span class = 'fa fa-edit'></span>
 		    				</a>
@@ -275,14 +275,16 @@
 					</h5>
 					
 				</div>
-				<form method="POST" action="<?php echo base_url(); ?>">
+				<form method="POST" action="<?php echo base_url(); ?>po/add_si">
 					<div class="modal-body">
 						<div class="form-group">
 							OR/SI
-							<input type="text" class="form-control" name="condition" autocomplete="off" id = "terms">
+							<input type="text" class="form-control" name="si_no" autocomplete="off" id = "si_no" value="<?php echo (empty($si_no) ? '' : $si_no); ?>"> 
 						</div>
 					</div>
 					<div class="modal-footer">
+						<input type="hidden" name="po_id" autocomplete="off" id = "po_id" value="<?php echo $po_id; ?>">
+						<input type="hidden" name="dr_id" autocomplete="off" id = "dr_id" value="<?php echo $dr_id; ?>">
 						<input type="submit" class="btn btn-primary btn-block" value="Save changes">
 					</div>
 
