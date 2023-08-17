@@ -358,7 +358,7 @@
 		    		<tr>
 		    			<td colspan="3"><h6 class="nomarg"><b>Supplier:</b></h6></td>
 		    			<td colspan="12"><h6 class="nomarg bor-btm"><b><?php echo $h['vendor']; ?></b></h6></td>
-		    			<td colspan="5"><h6 class="nomarg"><b>Manual PR: <?php echo $ci->get_name("purchase_request", "pr_head", "pr_id = '$h[site_pr]'");?></b></h6></td>
+		    			<td colspan="5"><h6 class="nomarg"><b>User PR: <?php echo $ci->get_name("purchase_request", "pr_head", "pr_id = '$h[site_pr]'");?></b></h6></td>
 		    		</tr>
 		    		<tr>
 		    			<td colspan="3"><h6 class="nomarg"><b>Address:</b></h6></td>

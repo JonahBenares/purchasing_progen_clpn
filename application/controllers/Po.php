@@ -359,6 +359,7 @@ class Po extends CI_Controller {
                 'phone'=>$this->super_model->select_column_where('vendor_head', 'phone_number', 'vendor_id',$h->vendor_id),
                 'fax'=>$this->super_model->select_column_where('vendor_head', 'fax_number', 'vendor_id',$h->vendor_id),
                 'contact'=>$this->super_model->select_column_where('vendor_head', 'contact_person', 'vendor_id', $h->vendor_id),
+                'site_pr'=>$this->super_model->select_column_where('po_pr', 'pr_id', 'po_id', $h->po_id),
             );
             $data['saved']=$h->saved;
             $data['notes']=$h->notes;
@@ -1018,6 +1019,7 @@ class Po extends CI_Controller {
                 'phone'=>$this->super_model->select_column_where('vendor_head', 'phone_number', 'vendor_id',$h->vendor_id),
                 'fax'=>$this->super_model->select_column_where('vendor_head', 'fax_number', 'vendor_id',$h->vendor_id),
                 'contact'=>$this->super_model->select_column_where('vendor_head', 'contact_person', 'vendor_id', $h->vendor_id),
+                'site_pr'=>$this->super_model->select_column_where('po_pr', 'pr_id', 'po_id', $h->po_id),
              
             );
             $data['shipping']=$h->shipping;
