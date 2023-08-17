@@ -190,6 +190,15 @@
 			    			<td colspan="17" class="all-border"><b class="nomarg"><?php echo $requested_by; ?></b></td>
 			    		</tr>
 			    		<tr>
+			    			<td colspan="3" class="all-border"><b class="nomarg">OR/SI: </b></td>
+			    			<td colspan="17" class="all-border">
+			    				<b class="nomarg">Sample</b> 
+			    				<a class='btn btn-primary btn-xs prnt' id = "updateTerm" data-toggle='modal' data-target='#UpdateTerms' data-id = '' data-name = ''>
+			    					<span class = 'fa fa-edit'></span>
+			    				</a>
+			    			</td>
+			    		</tr>
+			    		<tr>
 			    			<td colspan="20" align="center"><br></td>
 			    		</tr>
 			    		<?php } ?>
@@ -297,6 +306,32 @@
 	    	<input type='hidden' name='joi_dr_id' value='<?php echo $joi_dr_id; ?>'>
     	</form>
     </div>
+    <div class="modal fade" id="UpdateTerms" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Official Receipt/ Sales Invoice Number
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+						</button>
+					</h5>
+					
+				</div>
+				<form method="POST" action="<?php echo base_url(); ?>">
+					<div class="modal-body">
+						<div class="form-group">
+							OR/SI
+							<input type="text" class="form-control" name="condition" autocomplete="off" id = "terms">
+						</div>
+					</div>
+					<div class="modal-footer">
+						<input type="submit" class="btn btn-primary btn-block" value="Save changes">
+					</div>
+
+				</form>
+			</div>
+		</div>
+	</div>
     <script type="text/javascript">
     	function printPage() {
 		  window.print();
