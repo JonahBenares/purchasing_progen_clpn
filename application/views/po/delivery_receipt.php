@@ -180,7 +180,7 @@
 		    			<td colspan="20" class="all-border"><b class="nomarg">Requestor: <?php echo $p['requestor']; ?></b></td>
 		    		</tr>
 		    		<tr>
-		    			<td colspan="20"><b class="nomarg">PR No: <?php echo $p['pr_no']."-".COMPANY; ?></b></td>
+		    			<td colspan="20"><b class="nomarg">PR No: <?php echo $p['pr_no']."-".COMPANY . " / " . $p['user_pr']; ?></b></td>
 		    		</tr>
 		    		<?php } ?>
 		    		<!-- Loop -->
