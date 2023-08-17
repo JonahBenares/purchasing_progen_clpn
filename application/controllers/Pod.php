@@ -154,6 +154,11 @@ class Pod extends CI_Controller {
         }
     }
 
+    public function get_name($column, $table, $where){
+        $col = $this->super_model->select_column_custom_where($table, $column, $where);
+        return $col;
+    }
+
     public function get_pn($pr_details_id){
         $name = $this->super_model->select_column_where("pr_details", "part_no", "pr_details_id", $pr_details_id);
         return $name;
@@ -181,6 +186,7 @@ class Pod extends CI_Controller {
                 'phone'=>$this->super_model->select_column_where('vendor_head', 'phone_number', 'vendor_id',$h->vendor_id),
                 'fax'=>$this->super_model->select_column_where('vendor_head', 'fax_number', 'vendor_id',$h->vendor_id),
                 'contact'=>$this->super_model->select_column_where('vendor_head', 'contact_person', 'vendor_id', $h->vendor_id),
+                'site_pr'=>$this->super_model->select_column_where('po_pr', 'pr_id', 'po_id', $h->po_id)
             );
             $data['saved']=$h->saved;
             $data['shipping']=$h->shipping;
@@ -290,6 +296,7 @@ class Pod extends CI_Controller {
                 'phone'=>$this->super_model->select_column_where('vendor_head', 'phone_number', 'vendor_id',$h->vendor_id),
                 'fax'=>$this->super_model->select_column_where('vendor_head', 'fax_number', 'vendor_id',$h->vendor_id),
                 'contact'=>$this->super_model->select_column_where('vendor_head', 'contact_person', 'vendor_id', $h->vendor_id),
+                'site_pr'=>$this->super_model->select_column_where('po_pr', 'pr_id', 'po_id', $h->po_id)
             );
             $data['saved']=$h->saved;
             $data['draft']=$h->draft;
@@ -444,6 +451,7 @@ class Pod extends CI_Controller {
                 'phone'=>$this->super_model->select_column_where('vendor_head', 'phone_number', 'vendor_id',$h->vendor_id),
                 'fax'=>$this->super_model->select_column_where('vendor_head', 'fax_number', 'vendor_id',$h->vendor_id),
                 'contact'=>$this->super_model->select_column_where('vendor_head', 'contact_person', 'vendor_id', $h->vendor_id),
+                'site_pr'=>$this->super_model->select_column_where('po_pr', 'pr_id', 'po_id', $h->po_id)
             );
             $data['saved']=$h->saved;
             $data['draft']=$h->draft;
@@ -1069,6 +1077,7 @@ class Pod extends CI_Controller {
                 'phone'=>$this->super_model->select_column_where('vendor_head', 'phone_number', 'vendor_id',$h->vendor_id),
                 'fax'=>$this->super_model->select_column_where('vendor_head', 'fax_number', 'vendor_id',$h->vendor_id),
                 'contact'=>$this->super_model->select_column_where('vendor_head', 'contact_person', 'vendor_id', $h->vendor_id),
+                'site_pr'=>$this->super_model->select_column_where('po_pr', 'pr_id', 'po_id', $h->po_id)
             );
             $data['po_type']=$h->po_type;
             $data['shipping']=$h->shipping;
