@@ -60,6 +60,9 @@
 			.emphasis{
 				border: 0px solid #fff!important;
 			}
+			#updateTerm{
+				display: none;
+			}
 			.text-red{
 				color: red!important;
 			}
