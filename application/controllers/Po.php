@@ -185,6 +185,7 @@ class Po extends CI_Controller {
             $data= array(
                 'po_id'=>$po_id,
                 'po_date'=>$this->input->post('po_date'),
+                'manual_po'=>$this->input->post('manual_po'),
                 'po_no'=>$po_no,
                 'vendor_id'=>$this->input->post('vendor'),
                 'notes'=>$this->input->post('notes'),
@@ -207,6 +208,7 @@ class Po extends CI_Controller {
             $data= array(
                 'po_id'=>$po_id,
                 'po_date'=>$this->input->post('po_date'),
+                'manual_po'=>$this->input->post('manual_po'),
                 'po_no'=>$po_no,
                 'vendor_id'=>$this->input->post('vendor'),
                 'notes'=>$this->input->post('notes'),
@@ -354,6 +356,7 @@ class Po extends CI_Controller {
             $data['head'][] = array(
                 'po_date'=>$h->po_date,
                 'po_no'=>$h->po_no,
+                'manual_po'=>$h->manual_po,
                 'vendor'=>$this->super_model->select_column_where('vendor_head', 'vendor_name', 'vendor_id', $h->vendor_id),
                 'address'=>$this->super_model->select_column_where('vendor_head', 'address', 'vendor_id', $h->vendor_id),
                 'phone'=>$this->super_model->select_column_where('vendor_head', 'phone_number', 'vendor_id',$h->vendor_id),
@@ -1014,6 +1017,7 @@ class Po extends CI_Controller {
             $data['head'][] = array(
                 'po_date'=>$h->po_date,
                 'po_no'=>$h->po_no,
+                'manual_po'=>$h->manual_po,
                 'vendor'=>$this->super_model->select_column_where('vendor_head', 'vendor_name', 'vendor_id', $h->vendor_id),
                 'address'=>$this->super_model->select_column_where('vendor_head', 'address', 'vendor_id', $h->vendor_id),
                 'phone'=>$this->super_model->select_column_where('vendor_head', 'phone_number', 'vendor_id',$h->vendor_id),
@@ -1104,6 +1108,7 @@ class Po extends CI_Controller {
             $data['head'][] = array(
                 'po_date'=>$h->po_date,
                 'po_no'=>$h->po_no,
+                'manual_po'=>$h->manual_po,
                 'vendor'=>$this->super_model->select_column_where('vendor_head', 'vendor_name', 'vendor_id', $h->vendor_id),
                 'address'=>$this->super_model->select_column_where('vendor_head', 'address', 'vendor_id', $h->vendor_id),
                 'phone'=>$this->super_model->select_column_where('vendor_head', 'phone_number', 'vendor_id',$h->vendor_id),
@@ -1252,11 +1257,13 @@ class Po extends CI_Controller {
             $data['head'][] = array(
                 'po_date'=>$h->po_date,
                 'po_no'=>$h->po_no,
+                'manual_po'=>$h->manual_po,
                 'vendor'=>$this->super_model->select_column_where('vendor_head', 'vendor_name', 'vendor_id', $h->vendor_id),
                 'address'=>$this->super_model->select_column_where('vendor_head', 'address', 'vendor_id', $h->vendor_id),
                 'phone'=>$this->super_model->select_column_where('vendor_head', 'phone_number', 'vendor_id',$h->vendor_id),
                 'fax'=>$this->super_model->select_column_where('vendor_head', 'fax_number', 'vendor_id',$h->vendor_id),
                 'contact'=>$this->super_model->select_column_where('vendor_head', 'contact_person', 'vendor_id', $h->vendor_id),
+                'site_pr'=>$this->super_model->select_column_where('po_pr', 'pr_id', 'po_id', $h->po_id),
             );
             $data['shipping']=$h->shipping;
             $data['discount']=$h->discount;
@@ -1545,6 +1552,7 @@ class Po extends CI_Controller {
             $data['head'][]=array(
                 'po_date'=>$head->po_date,
                 'po_no'=>$head->po_no,
+                'manual_po'=>$head->manual_po,
                 'vendor'=>$this->super_model->select_column_where('vendor_head', 'vendor_name', 'vendor_id', $head->vendor_id),
                 'address'=>$this->super_model->select_column_where('vendor_head', 'address', 'vendor_id',$head->vendor_id),
                 'phone'=>$this->super_model->select_column_where('vendor_head', 'phone_number', 'vendor_id', $head->vendor_id),
@@ -1710,6 +1718,7 @@ class Po extends CI_Controller {
             $data['head'][]=array(
                 'po_date'=>$head->po_date,
                 'po_no'=>$head->po_no,
+                'manual_po'=>$head->manual_po,
                 'vendor'=>$this->super_model->select_column_where('vendor_head', 'vendor_name', 'vendor_id', $head->vendor_id),
                 'address'=>$this->super_model->select_column_where('vendor_head', 'address', 'vendor_id',$head->vendor_id),
                 'phone'=>$this->super_model->select_column_where('vendor_head', 'phone_number', 'vendor_id', $head->vendor_id),
@@ -2377,6 +2386,7 @@ class Po extends CI_Controller {
             $data['head'][] = array(
                 'po_date'=>$h->po_date,
                 'po_no'=>$h->po_no,
+                'manual_po'=>$h->manual_po,
                 'vendor'=>$this->super_model->select_column_where('vendor_head', 'vendor_name', 'vendor_id', $h->vendor_id),
                 'address'=>$this->super_model->select_column_where('vendor_head', 'address', 'vendor_id', $h->vendor_id),
                 'phone'=>$this->super_model->select_column_where('vendor_head', 'phone_number', 'vendor_id',$h->vendor_id),

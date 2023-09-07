@@ -138,6 +138,10 @@
                             <p class="m-b-0">Date:</p>
                             <input type="date" name="po_date" value = "<?php echo date('Y-m-d'); ?>" style = "pointer-events: none;" class="form-control">
                         </div>
+                        <div class="form-group">
+                            <p class="m-b-0">Manual PO No.:</p>
+                            <input type="text" name="manual_po" class="form-control">
+                        </div>
                       <!--   <div class="form-group">
                             <p class="m-b-0">PO NO:</p>
                             <input type="text" name="po_no" class="form-control" autocomplete="off">

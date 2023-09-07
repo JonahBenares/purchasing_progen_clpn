@@ -156,6 +156,9 @@
                         Date:
                         <input type="date" name="po_date" value = "<?php echo date('Y-m-d'); ?>" style = "pointer-events: none;" class="form-control" >
                         <br>
+                        Manual PO No.:
+                        <input type="text" name="manual_po" class="form-control">
+                        <br>
                         Vendor:
                         <select class="form-control selectpicker" name = "vendor" data-show-subtext="true" data-live-search="true">
                             <option value = ''>--Select Supplier--</option>
@@ -188,6 +191,9 @@
                     <div class="modal-body">
                         Date:
                         <input type="date" name="po_date" value = "<?php echo date('Y-m-d'); ?>" style = "pointer-events: none;" class="form-control">
+                        <br>
+                        Manual PO No.:
+                        <input type="text" name="manual_po" class="form-control">
                         <br>
                         Vendor:
                         <select class="form-control selectpicker" name = "supplier" data-show-subtext="true" data-live-search="true">

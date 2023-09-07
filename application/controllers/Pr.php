@@ -73,6 +73,7 @@ class Pr extends CI_Controller {
         $data= array(
             'po_id'=>$po_id,
             'po_date'=>$this->input->post('po_date'),
+            'manual_po'=>$this->input->post('manual_po'),
             'po_no'=>$po_no,
             'vendor_id'=>$this->input->post('vendor'),
             'po_type'=>1,
@@ -232,6 +233,7 @@ class Pr extends CI_Controller {
         $data = array(
             'po_id'=>$po_id,
             'po_date'=>$this->input->post('po_date'),
+            'manual_po'=>$this->input->post('manual_po'),
             'po_no'=>$po_no,
             'grouping_id'=>$group_id,
             'notes'=>$this->input->post('notes'),

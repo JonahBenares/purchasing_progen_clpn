@@ -181,6 +181,7 @@ class Pod extends CI_Controller {
             $data['head'][] = array(
                 'po_date'=>$h->po_date,
                 'po_no'=>$h->po_no,
+                'manual_po'=>$h->manual_po,
                 'vendor'=>$this->super_model->select_column_where('vendor_head', 'vendor_name', 'vendor_id', $h->vendor_id),
                 'address'=>$this->super_model->select_column_where('vendor_head', 'address', 'vendor_id', $h->vendor_id),
                 'phone'=>$this->super_model->select_column_where('vendor_head', 'phone_number', 'vendor_id',$h->vendor_id),
@@ -291,6 +292,7 @@ class Pod extends CI_Controller {
             $data['head'][] = array(
                 'po_date'=>$h->po_date,
                 'po_no'=>$h->po_no,
+                'manual_po'=>$h->manual_po,
                 'vendor'=>$this->super_model->select_column_where('vendor_head', 'vendor_name', 'vendor_id', $h->vendor_id),
                 'address'=>$this->super_model->select_column_where('vendor_head', 'address', 'vendor_id', $h->vendor_id),
                 'phone'=>$this->super_model->select_column_where('vendor_head', 'phone_number', 'vendor_id',$h->vendor_id),
@@ -446,6 +448,7 @@ class Pod extends CI_Controller {
             $data['head'][] = array(
                 'po_date'=>$h->po_date,
                 'po_no'=>$h->po_no,
+                'manual_po'=>$h->manual_po,
                 'vendor'=>$this->super_model->select_column_where('vendor_head', 'vendor_name', 'vendor_id', $h->vendor_id),
                 'address'=>$this->super_model->select_column_where('vendor_head', 'address', 'vendor_id', $h->vendor_id),
                 'phone'=>$this->super_model->select_column_where('vendor_head', 'phone_number', 'vendor_id',$h->vendor_id),
@@ -1072,6 +1075,7 @@ class Pod extends CI_Controller {
             $data['head'][] = array(
                 'po_date'=>$h->po_date,
                 'po_no'=>$h->po_no,
+                'manual_po'=>$h->manual_po,
                 'vendor'=>$this->super_model->select_column_where('vendor_head', 'vendor_name', 'vendor_id', $h->vendor_id),
                 'address'=>$this->super_model->select_column_where('vendor_head', 'address', 'vendor_id', $h->vendor_id),
                 'phone'=>$this->super_model->select_column_where('vendor_head', 'phone_number', 'vendor_id',$h->vendor_id),
